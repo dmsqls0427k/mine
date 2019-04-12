@@ -54,8 +54,8 @@
        $("#accordion").accordion()
      });
     $(function(){
-      $(".calendar").fullCalendar({
-         //defaultDate:new Date(),
+     $(".calendar").fullCalendar({
+         defaultDate:"2016-10-07",
          editeTable:true,
          eventLimit:true,
          events:[
@@ -168,36 +168,45 @@
       });
 
    $(".ndp").click(function(){
-     ".calendar".gotoDate("2016-06-17")
-    });
-  /* $(".mm").click(function(){
-      $(".calendar").fullcalendar({
+      $(".calendar").fullCalendar({
+         remove:defaultDate(),
+         defaultDate:"2016-06-17" })
+      });
+   $(".mm").click(function(){
+      $(".calendar").fullCalendar({
+        remove:defaultDate(),
         defaultDate:"2017-03-09"})
       });
-   $(".cr").click(function(){
+  $(".cr").click(function(){
       $(".calendar").fullcalendar({
+        remove:defaultDate(),
         defaultDate:"2017-07-07"})
       });
-   $(".lau").click(function(){
+     $(".lau").click(function(){
       $(".calendar").fullcalendar({
+        remove:defaultDate(),
         defaultDate:"2017-11-22"})
       });
    $(".hla").click(function(){
       $(".calendar").fullcalendar({
+        remove:defaultDate(),
         defaultDate:"2017-11-23"})
       });
    $(".mol").click(function(){
       $(".calendar").fullcalendar({
+        remove:defaultDate(),
         defaultDate:"2018-04-12"})
       });
    $(".jah").click(function(){
       $(".calendar").fullcalendar({
+        remove:defaultDate(),
         defaultDate:"2018-11-13"})
       });
   $(".fd").click(function(){
       $(".calendar").fullcalendar({
+        remove:defaultDate(),
         defaultDate:"2018-03-07"})
-      });*/
+      });
 
    </script>
  </head>
