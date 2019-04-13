@@ -11,7 +11,7 @@
    <script src="fullcalendar.min.js"></script>
    <link rel="stylesheet" href="fullcalendar.min.css"/>
 
-   
+
    <script>
    $(function(){
      $("#datepicker").datepicker()
@@ -19,10 +19,13 @@
    $(function(){
      $("#accordion").accordion()
    });
+   $(function(){
+     $("#calendar").fullCalendar()
+   });
    </script>
  </head>
  <body>
-   <h1><a href="welcome.html">Welcome!</a></h1>
+   <h1><a href="index.html">Welcome!</a></h1>
    <ol>
      <li><a href="musical.html">Musical</a></li>
      <li><a href="cross-stitch.html">Cross-stitch</a></li>
@@ -31,6 +34,7 @@
    </ol>
    <h2>1)복약표</h2>
    <p>Date: <input type="text" id="datepicker" /></p>
+   <div id="calendar"></div>
    <h2>2)drugs</h2>
    <div id="accordion">
      <h3>닥사스<h3>
