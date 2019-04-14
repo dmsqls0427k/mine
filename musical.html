@@ -10,9 +10,9 @@
    <script src=" jquery.js"></script>
    <script src="jquery-ui.min.js"></script>
    <link rel="stylesheet" href="jquery-ui.min.css"/>
-   <script src="fullcalendar-moment.min.js"></script>
-   <script src="fullcalendar.min.js"></script>
-   <link rel="stylesheet" href="fullcalendar.min.css"/>
+   <script src="jf2/fullcalendar-moment.min.js"></script>
+   <script src="jf2/fullcalendar.min.js"></script>
+   <link rel="stylesheet" href="jf2/fullcalendar.min.css"/>
    <script>
      $(function(){
        $(".ndp").css("background-color","gray");
@@ -27,6 +27,7 @@
     $(function(){
        $("#accordion").accordion()
      });
+
     $(function(){
      $(".calendar").fullCalendar({
          defaultDate:"2016-10-07",
@@ -141,17 +142,13 @@
          ]});
       });
 
-   $(".ndp").click(function(){
-      $(".calendar").fullCalendar({
-         remove:defaultDate(),
-         defaultDate:"2016-06-17", })
+    $(".ndp").click(function(){
+      $(".calendar").fullcalendar("changeView","2016-06-17")
       });
    $(".mm").click(function(){
-      $(".calendar").fullCalendar({
-        remove:defaultDate(),
-        defaultDate:"2017-03-09"})
+      $(".calendar").fullCalendar("gotoDate","2017-03-09")
       });
-   $(".cr").click(function(){
+  /* $(".cr").click(function(){
       $(".calendar").fullcalendar({
         remove:defaultDate(),
         defaultDate:"2017-07-07"})
@@ -180,7 +177,7 @@
       $(".calendar").fullcalendar({
         remove:defaultDate(),
         defaultDate:"2018-03-07"})
-      });
+      });    */
   </script>
  </head>
  <body>
