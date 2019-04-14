@@ -3,18 +3,15 @@
  <head>
    <title>Mine-musical</title>
    <meta charset="utf-8">
-   <link rel="stylesheet" href="style.css"/>
-
-
-   </style>
-   <script src=" jquery.js"></script>
-   <script src="jquery-ui.min.js"></script>
-   <link rel="stylesheet" href="jquery-ui.min.css"/>
-   <script src="jf2/fullcalendar-moment.min.js"></script>
-   <script src="jf2/fullcalendar.min.js"></script>
-   <link rel="stylesheet" href="jf2/fullcalendar.min.css"/>
+   <link rel="stylesheet" href="css/style.css"/>
+   <script src=" js/jquery.min.js"></script>
+   <script src="js/jquery-ui.min.js"></script>
+   <link rel="stylesheet" href="css/jquery-ui.min.css"/>
+   <script src="js/moment.min.js"></script>
+   <script src="js/fullcalendar.min.js"></script>
+   <link rel="stylesheet" href="css/fullcalendar.min.css"/>
    <script>
-     $(function(){
+      $(function(){
        $(".ndp").css("background-color","gray");
        $(".mm").css("background-color","yellow");
        $(".cr").css("background-color","magenta");
@@ -145,7 +142,7 @@
     $(".ndp").click(function(){
       $(".calendar").fullcalendar("changeView","2016-06-17")
       });
-   $(".mm").click(function(){
+    $(".mm").click(function(){
       $(".calendar").fullCalendar("gotoDate","2017-03-09")
       });
   /* $(".cr").click(function(){
