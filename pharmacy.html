@@ -36,6 +36,7 @@
    </ol>
    <h2>1)복약표</h2>
    <input type="button" id="ft" value="식사시간">
+   <p id="fta"></p>
    <script>
 
     $("#ft").click(function(){
@@ -52,9 +53,10 @@
       if(pt==""){
         pt=19;
       };
-     document.write("식사시간은"+at+"시,"+nt+"시,"+pt+"시 입니다");
+     document.getElementById("fta").innerHTML="식사시간은"+at+"시,"+nt+"시,"+pt+"시 입니다";
     });
    </script>
+
    <p>Date: 복용시작일을 표시하세요!<br>
      <input type="text" id="datepicker" /></p>
    <div class="widget">
@@ -62,30 +64,33 @@
      <fieldset>
        <legend>해당되는 것은 다 표시하세요</legend>
        <label for="ft-1">아침</label>
-       <input type="checkbox" name="ft" id="ft-1">
+       <input type="checkbox" name="ft1" id="ft-1" onclick="mf(id,name)">
        <label for="ft-2">점심</label>
-       <input type="checkbox" name="ft" id="ft-2">
+       <input type="checkbox" name="ft2" id="ft-2" onclick="mf(id,name)">
        <label for="ft-3">저녁</label>
-       <input type="checkbox" name="ft" id="ft-3">
+       <input type="checkbox" name="ft3" id="ft-3" onclick="mf(id,name)">
        <label for="ft-4">자기전</label>
-       <input type="checkbox" name="ft" id="ft-4">
+       <input type="checkbox" name="ft4" id="ft-4" onclick="mf(id,name)">
        <label for="ft-5">시간으로입력</label>
-       <input type="checkbox" name="ft" id="ft-5">
+       <input type="checkbox" name="ft5" id="ft-5" >
      </fieldset>
    </div>
-  <script>
-   if(document.getElementById("ft-1").checked){
-     document.write(at+"시에 알람이 설정되었습니다"<br>)
+
+   <p id="ft1" style="display:none">아침알람이 설정되었습니다</p>
+   <p id="ft2" style="display:none">점심알람이 설정되었습니다</p>
+   <p id="ft3" style="display:none">저녁알람이 설정되었습니다</p>
+   <p id="ft4" style="display:none">자기전알람이 설정되었습니다</p>
+   <script>
+  function mf(id,name){
+     var checkBox1=document.getElementById(id);
+     var text=document.getElementById(name);
+       if(checkBox1.checked==true){
+         text.style.display="block";
+       }else{
+         text.style.display="none";
+       }
    };
-   /*if("#ft-2"){
-     document.write(nt+"시에 알람이 설정되었습니다"<br>)
-   };
-   if("#ft-3"){
-     document.write(pt+"시에 알람이 설정되었습니다"<br>)
-   };
-   if("#ft-4"){
-     document.write(pt+4+"시에 알람이 설정되었습니다")
-   };*/
+
   </script>
    <br><br>
 
