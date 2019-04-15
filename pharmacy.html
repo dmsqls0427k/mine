@@ -10,6 +10,7 @@
    <script src="js/moment.min.js"></script>
    <script src="js/fullcalendar.min.js"></script>
    <link rel="stylesheet" href="css/fullcalendar.min.css"/>
+
    <script>
    $(function(){
      $("#datepicker").datepicker()
@@ -23,6 +24,15 @@
    $(function(){
      $("input").chedkboxradio()
    });
+  function myFunction(id, name) {
+      var checkBox = document.getElementById(id);
+      var text = document.getElementById(name);
+      if (checkBox.checked == true){
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    }
   </script>
  </head>
 
@@ -36,9 +46,10 @@
    </ol>
    <h2>1)복약표</h2>
    <input type="button" id="ft" value="식사시간">
-   <p id="fta"></p>
-   <script>
+   <p id = "fta"></p>
 
+   <script>
+   $ (document) .ready (function () {console.log ( "javascript is working");});
     $("#ft").click(function(){
 
      var at= prompt("아침식사시간을 입력하세요(입력하지 않으면 오전7시로 입력됩니다)");
@@ -52,11 +63,10 @@
      var pt= prompt("저녁식사시간을 입력하세요(입력하지 않으면 오후7시로 입력됩니다)");
       if(pt==""){
         pt=19;
-      };
-     document.getElementById("fta").innerHTML="식사시간은"+at+"시,"+nt+"시,"+pt+"시 입니다";
+      }
+    document.getElementById("fta").innerHTML = "식사시간은"+at+"시,"+nt+"시,"+pt+"시 입니다";
     });
    </script>
-
    <p>Date: 복용시작일을 표시하세요!<br>
      <input type="text" id="datepicker" /></p>
    <div class="widget">
@@ -64,51 +74,61 @@
      <fieldset>
        <legend>해당되는 것은 다 표시하세요</legend>
        <label for="ft-1">아침</label>
-       <input type="checkbox" name="ft1" id="ft-1" onclick="mf(id,name)">
+       <input type="checkbox" name="text1" id="ft-1" onclick="myFunction(id, name)">
        <label for="ft-2">점심</label>
-       <input type="checkbox" name="ft2" id="ft-2" onclick="mf(id,name)">
+       <input type="checkbox" name="text2" id="ft-2" onclick="myFunction(id, name)">
        <label for="ft-3">저녁</label>
-       <input type="checkbox" name="ft3" id="ft-3" onclick="mf(id,name)">
+       <input type="checkbox" name="text3" id="ft-3" onclick="myFunction(id, name)">
        <label for="ft-4">자기전</label>
-       <input type="checkbox" name="ft4" id="ft-4" onclick="mf(id,name)">
+       <input type="checkbox" name="text4" id="ft-4" onclick="myFunction(id, name)">
        <label for="ft-5">시간으로입력</label>
-       <input type="checkbox" name="ft5" id="ft-5" >
+       <input type="checkbox" name="text5" id="ft-5" >
      </fieldset>
+
    </div>
+   <p id="text1" style="display:none">아침 알람이 설정되었습니다!</p>
+   <p id="text2" style="display:none">점심알람이 설정되었습니다!</p>
+   <p id="text3" style="display:none">저녁 알람이 설정되었습니다!</p>
+   <p id="text4" style="display:none">시간 알람이 설정되었습니다!</p>
 
-   <p id="ft1" style="display:none">아침알람이 설정되었습니다</p>
-   <p id="ft2" style="display:none">점심알람이 설정되었습니다</p>
-   <p id="ft3" style="display:none">저녁알람이 설정되었습니다</p>
-   <p id="ft4" style="display:none">자기전알람이 설정되었습니다</p>
-   <script>
-  function mf(id,name){
-     var checkBox1=document.getElementById(id);
-     var text=document.getElementById(name);
-       if(checkBox1.checked==true){
-         text.style.display="block";
-       }else{
-         text.style.display="none";
-       }
+
+<!--   <script>
+    function myFunction(id, name) {
+      var checkBox = document.getElementById(id);
+      var text = document.getElementById(name);
+      if (checkBox.checked == true){
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    }
+    
+    // if(document.getElementById("ft-1").checked == true){
+   //   document.write("시에 알람이 설정되었습니다"<br>)
+
+   /*if("#ft-2"){
+     document.write(nt+"시에 알람이 설정되었습니다"<br>)
    };
-
-  </script>
+   if("#ft-3"){
+     document.write(pt+"시에 알람이 설정되었습니다"<br>)
+   };
+   if("#ft-4"){
+     document.write(pt+4+"시에 알람이 설정되었습니다")
+   };*/
+  </script> -->
    <br><br>
 
    <div id="calendar"></div>
-    <script>
-      /*$(document).ready(function() {
-       $("#calendar").fullCalendar({
+   <script>
 
-      });
+$('#datepicker').datepicker({
+            inline: true,
+            onSelect: function(dateText) {
+              $('#calendar').fullCalendar('gotoDate', this.value);
+              $('#calendar').fullCalendar('changeView', 'agendaDay');
+            }
 
-      $('#datepicker').datepicker({
-          inline: true,
-          onSelect: function(dateText, inst) {
-              var d = new Date(dateText);
-              $('#fullcalendar').fullCalendar('gotoDate', d);
-            };
-          });
-      });*/
+          }); 
       /*customButtons: {
        gotoDate: {
         text: 'Go to date',
@@ -127,6 +147,7 @@
         'center': 'gotoDate'
       };*/
     </script>
+
    <h2>2)drugs</h2>
    <div id="accordion">
      <h3>닥사스<h3>
@@ -137,3 +158,4 @@
 
  </body>
 </html>
+
